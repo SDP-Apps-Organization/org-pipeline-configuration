@@ -1,4 +1,4 @@
-application_image_repository = "172.30.1.1:5000/iae-project/jenkins"
+application_image_repository = "https://index.docker.io/v1/"
 application_image_repository_credential = "dockerhub-creds"
 
 libraries{
