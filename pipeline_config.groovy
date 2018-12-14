@@ -1,4 +1,4 @@
-application_image_repository = "index.docker.io/v1"
+application_image_repository = "localhost:8080"
 application_image_repository_credential = "dockerhub-creds"
 
 libraries{
