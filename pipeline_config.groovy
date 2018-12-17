@@ -52,6 +52,6 @@ application_environments{
 //
 //   }
 // }
-pipeline_template_methods{
+steps{
   unit_test
 }
