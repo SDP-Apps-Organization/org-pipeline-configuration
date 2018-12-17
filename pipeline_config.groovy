@@ -52,8 +52,7 @@ application_environments{
 //
 //   }
 // }
-steps{
-  unit_test{
-    stage = "Unit Test"
-  }
+pipeline_template_methods{
+    unit_test
 }
+steps
