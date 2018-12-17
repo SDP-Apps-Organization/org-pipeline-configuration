@@ -47,22 +47,37 @@ application_environments{
      }
 }
 
-steps{
-  unit_test_java{
-    stage = "Java Unit Test"
-    image = "maven"
-    command = "mvn test -Dmaven.test.failure.ignore=false"
-    stash{
-      name = "test-results"
-      includes = "./target"
-      excludes = "./src"
-      useDefaultExcludes = false
-      allowEmpty = true
+// stages{
+//   continuous_integration{
+//
+//   }
+// }
+
+if (fileExists("package.json")) {
+  steps{
+    unit_test{
+      stage = "Node Unit Test"
+      image = "node"
+      command = "npm install --only=dev; npm test"
+    }
+    syntax_test{
+      stage = "Node Syntax Test"
+      image = "node"
+      command = "echo \"Running syntax check for node\""
     }
   }
-  unit_test_node{
-    stage = "Node Unit Test"
-    image = "node"
-    command = "npm install --only=dev; npm test"
+}
+else if (fileExists("pom.xml")) {
+  steps{
+    unit_test{
+      stage = "Java Unit Test"
+      image = "maven"
+      command = "mvn test -Dmaven.test.failure.ignore=false"
+    }
+    syntax_test{
+      stage = "Java Syntax Test"
+      image = "maven"
+      command = "echo \"Running syntax check for java\""
+    }
   }
 }

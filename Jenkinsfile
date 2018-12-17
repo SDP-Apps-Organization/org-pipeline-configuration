@@ -1,8 +1,5 @@
 on_commit to: develop, {
   //build()
-  // parallel "API Testing": { api_testing_for dev },
-  //          "Unit Testing": { unit_testing() },
-  //          "Syntax Testing": { syntax_testing() }
   unit_test_node()
   //deploy to dev
 }
