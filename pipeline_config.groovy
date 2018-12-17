@@ -52,16 +52,3 @@ application_environments{
 //
 //   }
 // }
-
-steps{
-  unit_test{
-    stage = "Unit Testing"
-    image = "node"
-    command = "npm install --only=dev; npm test"
-  }
-  syntax_test{
-    stage = "Node Syntax Test"
-    image = "node"
-    command = "echo \"Running syntax check for node\""
-  }
-}
