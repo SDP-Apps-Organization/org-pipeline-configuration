@@ -1,6 +1,6 @@
 on_commit to: develop, {
-  //build()
-  unit_test()
+  build()
+  //unit_test()
   //deploy to dev
 }
 on_commit to: release, {

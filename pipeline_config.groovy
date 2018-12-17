@@ -53,31 +53,15 @@ application_environments{
 //   }
 // }
 
-if (fileExists("package.json")) {
-  steps{
-    unit_test{
-      stage = "Node Unit Test"
-      image = "node"
-      command = "npm install --only=dev; npm test"
-    }
-    syntax_test{
-      stage = "Node Syntax Test"
-      image = "node"
-      command = "echo \"Running syntax check for node\""
-    }
-  }
-}
-else if (fileExists("pom.xml")) {
-  steps{
-    unit_test{
-      stage = "Java Unit Test"
-      image = "maven"
-      command = "mvn test -Dmaven.test.failure.ignore=false"
-    }
-    syntax_test{
-      stage = "Java Syntax Test"
-      image = "maven"
-      command = "echo \"Running syntax check for java\""
-    }
-  }
-}
+// steps{
+//   unit_test{
+//     stage = "Unit Testing"
+//     image = "node"
+//     command = "npm install --only=dev; npm test"
+//   }
+//   syntax_test{
+//     stage = "Node Syntax Test"
+//     image = "node"
+//     command = "echo \"Running syntax check for node\""
+//   }
+// }
