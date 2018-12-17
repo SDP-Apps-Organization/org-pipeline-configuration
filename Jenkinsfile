@@ -3,7 +3,7 @@ on_commit to: develop, {
   // parallel "API Testing": { api_testing_for dev },
   //          "Unit Testing": { unit_testing() },
   //          "Syntax Testing": { syntax_testing() }
-  unit_test_java()
+  unit_test_node()
   //deploy to dev
 }
 on_commit to: release, {
