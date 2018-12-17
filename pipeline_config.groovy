@@ -52,6 +52,3 @@ application_environments{
 //
 //   }
 // }
-steps{
-  unit_test
-}
