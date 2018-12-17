@@ -52,7 +52,9 @@ application_environments{
 //
 //   }
 // }
-pipeline_template_methods{
-    unit_test
+steps{
+  unit_test{
+    stage = "Unit Test"
+    image = "maven"
+  }
 }
-steps
