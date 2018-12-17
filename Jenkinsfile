@@ -1,26 +1,41 @@
 on_commit to: develop, {
-  build()
-  api_testing_for dev
+  //build()
+  // parallel "API Testing": { api_testing_for dev },
+  //          "Unit Testing": { unit_testing() },
+  //          "Syntax Testing": { syntax_testing() }
+  unit_test_java()
   //deploy to dev
 }
 on_commit to: release, {
   build()
-  api_testing_for staging
+  parallel "API Testing": { api_testing_for dev },
+           "Unit Testing": { unit_testing() },
+           "Syntax Testing": { syntax_testing() }
   //deploy to staging
 }
 on_commit to: hotfix, {
   build()
-  api_testing_for hotfix
+  parallel "API Testing": { api_testing_for dev },
+           "Unit Testing": { unit_testing() },
+           "Syntax Testing": { syntax_testing() }
   //deploy to hotfix
 }
 
 on_pull_request to: develop, {
   build()
-  api_testing_for dev
+  parallel "API Testing": { api_testing_for dev },
+           "Unit Testing": { unit_testing() },
+           "Syntax Testing": { syntax_testing() }
   //deploy to dev
 }
 
 on_pull_request to: master, {
   build()
-  api_testing_for prod
+  parallel "API Testing": { api_testing_for dev },
+           "Unit Testing": { unit_testing() },
+           "Syntax Testing": { syntax_testing() }
+}
+
+on_merge to: develop, {
+
 }

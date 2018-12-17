@@ -46,3 +46,23 @@ application_environments{
        askApproval = true
      }
 }
+
+steps{
+  unit_test_java{
+    stage = "Java Unit Test"
+    image = "maven"
+    command = "mvn test -Dmaven.test.failure.ignore=false"
+    stash{
+      name = "test-results"
+      includes = "./target"
+      excludes = "./src"
+      useDefaultExcludes = false
+      allowEmpty = true
+    }
+  }
+  unit_test_node{
+    stage = "Node Unit Test"
+    image = "node"
+    command = "npm install --only=dev; npm test"
+  }
+}
