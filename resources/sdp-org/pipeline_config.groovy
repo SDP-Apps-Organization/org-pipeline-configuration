@@ -10,6 +10,7 @@ libraries{
   newman {
     merge = true
   }
+  marketplace
 }
 
 keywords{
@@ -49,9 +50,3 @@ application_environments{
        askApproval = true
      }
 }
-
-// stages{
-//   continuous_integration{
-//
-//   }
-// }
