@@ -52,6 +52,3 @@ application_environments{
 //
 //   }
 // }
-steps{
-  org_default_step_implementation
-}
