@@ -53,8 +53,5 @@ application_environments{
 //   }
 // }
 steps{
-  unit_test{
-    stage = "Unit Test"
-    image = "maven"
-  }
+  unit_test
 }
