@@ -4,7 +4,7 @@ application_image_repository_credential = "dockerhub-creds"
 libraries{
   github_enterprise
   docker
-  unit_testing
+  syntax_unit_testing
   newman {
     merge = true
   }
