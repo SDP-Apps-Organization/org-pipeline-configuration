@@ -1,6 +1,7 @@
 on_commit to: develop, {
-  //build()
-  syntax_unit_test()
+  parallel "Unit & Syntax Testing": { syntax_unit_test() },
+           "API Testing": { api_testing_for dev }
+  build()
   //deploy to dev
 }
 on_commit to: release, {
