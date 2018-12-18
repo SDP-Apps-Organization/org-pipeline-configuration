@@ -1,51 +1,51 @@
 on_commit to: develop, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for dev },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for dev },
            "API Testing": { api_testing_for dev }
   build()
   //deploy to dev
 }
 on_commit to: release, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for staging },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for staging },
            "API Testing": { api_testing_for staging }
   build()
   //deploy to staging
 }
 on_commit to: hotfix, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for hotfix },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for hotfix },
            "API Testing": { api_testing_for hotfix }
   build()
   //deploy to hotfix
 }
 
 on_pull_request to: develop, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for dev },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for dev },
            "API Testing": { api_testing_for dev }
   build()
   //deploy to dev
 }
 
 on_pull_request to: master, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for prod },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for prod },
            "API Testing": { api_testing_for prod }
   build()
 }
 
 on_merge to: develop, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for test },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for test },
            "API Testing": { api_testing_for test }
   build()
   //deploy to test
 }
 
 on_merge to: release, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for staging },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for staging },
            "API Testing": { api_testing_for staging }
   build()
   //deploy to staging
 }
 
 on_merge to: master, from: release, {
-  parallel "Unit & Syntax Testing": { syntax_unit_test_for prod },
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for prod },
            "API Testing": { api_testing_for prod }
   build()
   //deploy to prod
