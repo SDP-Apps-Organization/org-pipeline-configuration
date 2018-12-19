@@ -2,15 +2,12 @@ application_image_repository = "aleckeller13"
 application_image_repository_credential = "dockerhub-creds"
 
 libraries{
-  github_enterprise
-  docker
   syntax_unit_testing {
     merge = true
   }
   newman {
     merge = true
   }
-  marketplace
 }
 
 keywords{
