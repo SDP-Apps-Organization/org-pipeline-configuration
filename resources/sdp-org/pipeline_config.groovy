@@ -11,7 +11,6 @@ libraries{
 }
 
 application_environments{
-  override = true
   dev{
      short_name = "comp"
      long_name = "Component"
@@ -35,5 +34,14 @@ application_environments{
      long_name = "Production"
      appName = "prod"
      ucp_bundle_directory = "/var/lib/jenkins/prod"
+  }
+}
+
+steps{
+  unit_test{
+    stage = "Unit Test"
+    image = "aleckeller13/unittesting"    //create image that has both node and mvn installed
+    command = ""                          //write command that determines which language
+
   }
 }

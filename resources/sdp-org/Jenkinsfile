@@ -1,6 +1,6 @@
 on_commit to: develop, {
-  syntax_unit_test_for dev
-  api_testing_for dev 
+  parallel "Unit and Syntax Testing": { syntax_unit_test_for dev },
+           "API Testing": { api_testing_for dev }
   build()
   deploy_to dev
 }
